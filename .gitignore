@@ -1,7 +1,9 @@
 data/input/*
 !data/input/.gitkeep
+!data/input/data_description.md
 data/output/*
 !data/output/.gitkeep
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
