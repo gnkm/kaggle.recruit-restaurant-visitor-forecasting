@@ -16,7 +16,7 @@ Summary
 
 ## Codes
 train_feat = pd.DataFrame()
-# @note: 出どころが不明．
+# @note: 2017-04-23 の 6 週間前．
 start_date = '2017-03-12'
 for i in range(58):
     # (1)
