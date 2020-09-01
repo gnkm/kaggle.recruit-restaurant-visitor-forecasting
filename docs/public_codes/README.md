@@ -8,3 +8,4 @@
 - [Surprise Me 2! | Kaggle](https://www.kaggle.com/tunguz/surprise-me-2)
   - 時系列データであることは無視？
 - [Explore TS with LSTM | Kaggle](https://www.kaggle.com/yekenot/explore-ts-with-lstm)
+  - `df.shift(1)`，`df.shift(-1)` だけ
