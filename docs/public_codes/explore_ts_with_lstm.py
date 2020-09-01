@@ -6,9 +6,17 @@
 
 Summary
 
-予測対象は 2017-04-23 - 2017-05-31 の 39 日．
+`df.shift(positive_num)` で対象日より前のデータ，
+`df.shift(negative_num)` で対象日より後のデータを学習データに含める．
+=> @note: 予測の時に使えないのでは？
+ここでは `n_in`, `n_out` で指定している．
 
+```
+reframed = series_to_supervised(scaled, 1, 1)
+```
 
+であるから，`n_in`, `n_out` 両方とも 1.
+@note: もっと大きな値にしなくてよいのか？
 """
 
 ## Codes
