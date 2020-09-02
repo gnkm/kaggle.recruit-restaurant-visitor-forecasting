@@ -9,3 +9,4 @@
   - 時系列データであることは無視？
 - [Explore TS with LSTM | Kaggle](https://www.kaggle.com/yekenot/explore-ts-with-lstm)
   - `df.shift(1)`，`df.shift(-1)` だけ
+- [Surprise Me 2! Neural Networks(keras) | Kaggle](https://www.kaggle.com/nitinsurya/surprise-me-2-neural-networks-keras)
