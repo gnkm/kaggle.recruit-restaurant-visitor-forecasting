@@ -17,7 +17,7 @@ if [ $1 = 'run' ]; then
         --rm \
         -it \
         --name kaggle-python \
-        gcr.io/kaggle-images/python@sha256:af3e19d6210754b09d3ae97d30210712ff183877ab6d0fa71485a0dd7c1f33b3 \
+        gnkm/kaggle:001 \
         python $2
 elif [ $1 = 'jp' ]; then
     docker run \
@@ -27,7 +27,7 @@ elif [ $1 = 'jp' ]; then
         --rm \
         -it \
         --name kaggle-jupyter \
-        gcr.io/kaggle-images/python@sha256:af3e19d6210754b09d3ae97d30210712ff183877ab6d0fa71485a0dd7c1f33b3 \
+        gnkm/kaggle:001 \
         jupyter notebook \
             --no-browser \
             --ip=0.0.0.0 \
@@ -40,7 +40,7 @@ elif [ $1 = 'flake' ]; then
         --rm \
         -it \
         --name kaggle-python \
-        gcr.io/kaggle-images/python@sha256:af3e19d6210754b09d3ae97d30210712ff183877ab6d0fa71485a0dd7c1f33b3 \
+        gnkm/kaggle:001 \
         flake8 $2
 elif [ $1 = 'scripts' ]; then
     docker run \
@@ -49,7 +49,7 @@ elif [ $1 = 'scripts' ]; then
         --rm \
         -it \
         --name kaggle-python \
-        gcr.io/kaggle-images/python@sha256:af3e19d6210754b09d3ae97d30210712ff183877ab6d0fa71485a0dd7c1f33b3 \
+        gnkm/kaggle:001 \
         python $2 $3
 else
     docker run \
@@ -58,6 +58,6 @@ else
         --rm \
         -it \
         --name kaggle-python \
-        gcr.io/kaggle-images/python@sha256:af3e19d6210754b09d3ae97d30210712ff183877ab6d0fa71485a0dd7c1f33b3 \
+        gnkm/kaggle:001 \
         $1
 fi

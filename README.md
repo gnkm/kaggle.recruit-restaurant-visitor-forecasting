@@ -6,10 +6,11 @@
 
 ## Usage
 
-### Pull docker image
+### Make Docker Image
 
 ```
-docker pull gcr.io/kaggle-images/python
+cd docker
+docker build --no-cache -t gnkm/kaggle:001 .
 ```
 
 ### Run Jupyter
