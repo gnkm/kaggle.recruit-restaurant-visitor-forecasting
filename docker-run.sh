@@ -28,7 +28,7 @@ elif [ $1 = 'jp' ]; then
         -it \
         --name kaggle-jupyter \
         gnkm/kaggle:001 \
-        jupyter notebook \
+        jupyter lab \
             --no-browser \
             --ip=0.0.0.0 \
             --allow-root \
