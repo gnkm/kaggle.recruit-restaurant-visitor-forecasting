@@ -10,7 +10,7 @@ ____USAGE
 
 # main script starts here
 
-if [ $1 = 'run' ]; then
+if [ $1 = 'py' ]; then
     docker run \
         -v $PWD:/tmp/working \
         -w=/tmp/working \
@@ -18,7 +18,7 @@ if [ $1 = 'run' ]; then
         -it \
         --name kaggle-python \
         gnkm/kaggle:001 \
-        python $2
+        python ${@:2}
 elif [ $1 = 'jp' ]; then
     docker run \
         -v $PWD:/tmp/working \
@@ -33,6 +33,18 @@ elif [ $1 = 'jp' ]; then
             --ip=0.0.0.0 \
             --allow-root \
             --notebook-dir=/tmp/working
+elif [ $1 = 'ui' ]; then
+    docker run \
+        -v $PWD:/tmp/working \
+        -w=/tmp/working \
+        -p 5000:5000 \
+        --rm \
+        -it \
+        --name kaggle-mlflow-ui \
+        gnkm/kaggle:001 \
+        mlflow ui \
+            --backend-store-uri /tmp/working/mlflow/mlruns \
+            --host 0.0.0.0
 elif [ $1 = 'flake' ]; then
     docker run \
         -v $PWD:/tmp/working \
@@ -41,16 +53,7 @@ elif [ $1 = 'flake' ]; then
         -it \
         --name kaggle-python \
         gnkm/kaggle:001 \
-        flake8 $2
-elif [ $1 = 'scripts' ]; then
-    docker run \
-        -v $PWD:/tmp/working \
-        -w=/tmp/working \
-        --rm \
-        -it \
-        --name kaggle-python \
-        gnkm/kaggle:001 \
-        python $2 $3
+        flake8 ${@:2}
 else
     docker run \
         -v $PWD:/tmp/working \
@@ -59,5 +62,5 @@ else
         -it \
         --name kaggle-python \
         gnkm/kaggle:001 \
-        $1
+        ${@:2}
 fi
