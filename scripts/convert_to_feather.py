@@ -11,6 +11,7 @@ files = [
     f'{input_data_path}/date_info.csv',
     f'{input_data_path}/hpg_store_info.csv',
     f'{input_data_path}/store_id_relation.csv',
+    f'{input_data_path}/sample_submission.csv',
 ]
 
 
@@ -84,6 +85,14 @@ def hpg_store_info():
 
 def store_id_relation():
     file_name = 'store_id_relation'
+    pd.read_csv(
+        f'{input_data_path}/{file_name}.csv',
+        encoding='utf-8',
+    ).to_feather(f'{input_data_path}/{file_name}.feather')
+
+
+def sample_submission():
+    file_name = 'sample_submission'
     pd.read_csv(
         f'{input_data_path}/{file_name}.csv',
         encoding='utf-8',
